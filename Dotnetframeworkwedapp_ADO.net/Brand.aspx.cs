@@ -9,6 +9,15 @@ namespace Dotnetframeworkwedapp_ADO.net
 {
     public partial class Brand : System.Web.UI.Page
     {
+        protected void Page_PreInit(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
