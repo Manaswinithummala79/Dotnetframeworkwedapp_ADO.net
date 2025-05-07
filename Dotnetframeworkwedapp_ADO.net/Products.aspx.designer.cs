@@ -11,25 +11,25 @@ namespace Dotnetframeworkwedapp_ADO.net
 {
 
 
-    public partial class Brand
+    public partial class Products
     {
 
         /// <summary>
-        /// FormView1 control.
+        /// ProductGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FormView FormView1;
+        protected global::System.Web.UI.WebControls.GridView ProductGrid;
 
         /// <summary>
-        /// BrandsGridView control.
+        /// ProductEntityDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView BrandsGridView;
+        protected global::System.Web.UI.WebControls.EntityDataSource ProductEntityDataSource;
     }
 }
