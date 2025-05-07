@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - My ASP.NET Application</title>
 
-    <asp:PlaceHolder runat="server">
+    <asp:PlaceHolder runat="server"><a href="Site.Master">Site.Master</a>
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
@@ -54,6 +54,7 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                         <li><a runat="server" href="~/Brand">Brand</a></li>
+                        <li><a runat="server" href="~/Products">Products</a></li>
                     </ul>
                 </div>
             </div>

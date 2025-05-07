@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.SqlClient; // SQLConnection
+using System.Data;
 
 namespace Dotnetframeworkwedapp_ADO.net
 {
