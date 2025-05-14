@@ -4,4 +4,13 @@
     <h2><%: Title %>.</h2>
     <h3>Your application description page.</h3>
     <p>Use this area to provide additional information.</p>
+    <div>   
+
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="BikeStoresEntities">
+        </asp:GridView>
+
+        <asp:EntityDataSource ID="BikeStoresEntities" runat="server">
+        </asp:EntityDataSource>
+
+    </div>
 </asp:Content>

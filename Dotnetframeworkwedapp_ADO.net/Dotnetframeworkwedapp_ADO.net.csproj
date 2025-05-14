@@ -44,12 +44,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -106,6 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="BikeStore.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>BikeStore.Context.cs</LastGenOutput>
+      <DependentUpon>BikeStore.edmx</DependentUpon>
+    </Content>
+    <Content Include="BikeStore.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BikeStore.edmx</DependentUpon>
+      <LastGenOutput>BikeStore.cs</LastGenOutput>
+    </Content>
     <Content Include="Brand.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -125,6 +143,13 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <EntityDeploy Include="BikeStore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BikeStore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="BikeStore.edmx.diagram">
+      <DependentUpon>BikeStore.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -170,6 +195,21 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BikeStore.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikeStore.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BikeStore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BikeStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BikeStore.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Brand.aspx.cs">
       <DependentUpon>Brand.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -177,12 +217,21 @@
     <Compile Include="Brand.aspx.designer.cs">
       <DependentUpon>Brand.aspx</DependentUpon>
     </Compile>
+    <Compile Include="brand.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="category.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -194,6 +243,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="order.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="order_items.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -204,12 +262,23 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="staff.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stock.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store.cs">
+      <DependentUpon>BikeStore.tt</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -228,6 +297,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
